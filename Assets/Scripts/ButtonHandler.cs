@@ -8,6 +8,8 @@ public class ButtonHandler : MonoBehaviour
 {
     public GameObject ButtonLogin;
     public GameObject ButtonTransfer;
+    public GameObject InputAmount;
+    public GameObject InputName;
 
     void Start()
     {
@@ -20,6 +22,12 @@ public class ButtonHandler : MonoBehaviour
         //ButtonTransfer = GameObject.Find("ButtonTransfer");
         Text transferText = ButtonTransfer.transform.Find("Text").GetComponent<Text>();
         transferText.text = "Tranfer";
+
+        // Get Input Amount
+        Text inputAmount = InputAmount.transform.Find("Text").GetComponent<Text>();
+
+        // Get Input Name
+        Text inputName = InputName.transform.Find("Text").GetComponent<Text>();
 
     }
 
