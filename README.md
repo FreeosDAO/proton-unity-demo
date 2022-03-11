@@ -7,5 +7,5 @@ Install Unity 2021.2.X.
 Install WebGL Modules (File > Build Settings > WebGL > Switch Platform)  
 Open project, File > Build & Run. 
   
-Put this in index.html <head> 
+Put this in index.html head. 
   <script src="https://unpkg.com/@proton/web-sdk@4.1.4"></script>
