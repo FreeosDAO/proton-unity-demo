@@ -61,9 +61,9 @@ public class Proton : MonoBehaviour
     }
 
 
-    public void ProtonTransfer()
+    public void ProtonTransfer(string to, double amount)
     {
-        Transfer("token.burn", 0.0001, TransferCallback);
+        Transfer(to, amount, TransferCallback);
     }
 
     // Main

@@ -8,9 +8,10 @@ public class ButtonHandler : MonoBehaviour
 {
     public GameObject ButtonLogin;
     public GameObject ButtonTransfer;
-    public GameObject InputAmount;
-    public GameObject InputName;
+    public InputField inputName;
+    public InputField inputAmount;
 
+    private string userID = null;
     void Start()
     {
         // Set ButtonLogin Text
@@ -23,26 +24,21 @@ public class ButtonHandler : MonoBehaviour
         Text transferText = ButtonTransfer.transform.Find("Text").GetComponent<Text>();
         transferText.text = "Tranfer";
 
-        // Get Input Amount
-        Text inputAmount = InputAmount.transform.Find("Text").GetComponent<Text>();
-
-        // Get Input Name
-        Text inputName = InputName.transform.Find("Text").GetComponent<Text>();
-
     }
-
     // Login() Function
     private Proton protonLogin;
     public void Login()
     {
-        protonLogin.ProtonLogin();
-
+      protonLogin.ProtonLogin();
     }
 
     // Transfer() Function
     private Proton protonTransfer;
+
     public void Transfer()
     {
-        protonTransfer.ProtonTransfer();
+        userID = inputName.text;
+        double amount = float.Parse(System.String.Format("{0:0.0000}", inputAmount.text));
+        protonTransfer.ProtonTransfer(userID, amount);
     }
 }
